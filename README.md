@@ -12,7 +12,16 @@ A single-sample network-based framework to analyze RNA sequencing data from a co
 
 
 
-<p>This is a normal paragraph:</p>
+<p>Framework function:</p>
 
-<pre><code>This is a code block.
+<pre><code>
+  framework(file_e='./example/gene_expression.txt', 
+              k=0.1, 
+              file_p='./example/samples.txt', 
+              file_i='./example/interest_genes.txt',
+              save_path='./example', 
+              pvalue=0.01,                
+              rate=0.7)
 </code></pre>
+
+

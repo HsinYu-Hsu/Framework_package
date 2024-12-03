@@ -3,7 +3,7 @@ This framework package is a single-sample network-based framework to analyze RNA
 
 1. Single-Sample Networks (SINs) Construction: Used the sample-specific weighted correlation network (SWEET) method to construct SINs.
 2. Subnetwork Extraction: Applied the random walk with restart (RWR) algorithm to extract subnetworks centered on user-specified gene sets.
-3. Network Enrichment Analysis: Performed network edge-based enrichment analysis (NEEA) to identify enriched biological pathways to these subnetworks.
+3. Pathway Enrichment Analysis: Performed network edge-based enrichment analysis (NEEA) to identify enriched biological pathways to these subnetworks.
 This approach reveals biological differences by analyzing gene expression and network structure.
 
 ## Framework

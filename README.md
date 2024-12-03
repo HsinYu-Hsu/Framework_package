@@ -23,7 +23,7 @@ A single-sample network-based framework to analyze RNA sequencing data from a co
 
 <p>Framework function:</p>
 <pre><code>from framework_package import framework
-
+  
 framework(file_e='./example/gene_expression.txt', 
               k=0.1, 
               file_p='./example/samples.txt', 

@@ -25,10 +25,10 @@ A single-sample network-based framework to analyze RNA sequencing data from a co
 <pre><code>from framework_package import framework  
   
   framework(file_e='./example/gene_expression.txt', 
-              k=0.1, 
-              file_p='./example/samples.txt', 
-              file_i='./example/interest_genes.txt',
-              save_path='./example', 
-              pvalue=0.01,                
-              rate=0.7)
+                k=0.1, 
+                file_p='./example/samples.txt', 
+                file_i='./example/interest_genes.txt',
+                save_path='./example', 
+                pvalue=0.01,                
+                rate=0.7)
 </code></pre>

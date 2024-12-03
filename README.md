@@ -22,13 +22,12 @@ A single-sample network-based framework to analyze RNA sequencing data from a co
 | ENSG00000127314 | 7.681309 | 7.565978 |
 
 <p>Framework function:</p>
-<pre><code>from framework_package import framework  
-  
-  framework(file_e='./example/gene_expression.txt', 
-                k=0.1, 
-                file_p='./example/samples.txt', 
-                file_i='./example/interest_genes.txt',
-                save_path='./example', 
-                pvalue=0.01,                
-                rate=0.7)
+<pre><code>from framework_package import framework
+  def framework(GEM, 
+              k=0.1, 
+              Samples=None, 
+              Interest_genes=None,
+              save_path=None, 
+              pvalue=0.01,                
+              rate=0.7)
 </code></pre>

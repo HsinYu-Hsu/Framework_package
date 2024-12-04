@@ -3,12 +3,11 @@ This framework package is a single-sample network-based framework to analyze RNA
 
 1. Single-Sample Networks (SINs) Construction: Used the sample-specific weighted correlation network (SWEET) method to construct SINs.
 For more information, you can visit:
-[Paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC10025435/#ref41)
-[SWEET repository on GitHub](https://github.com/SysMednet/SWEET/tree/main).
+[[Publication]](https://pmc.ncbi.nlm.nih.gov/articles/PMC10025435)
+[[SWEET repository on GitHub]](https://github.com/SysMednet/SWEET/tree/main).
 
-3. Subnetwork Extraction: Applied the random walk with restart (RWR) algorithm to extract subnetworks centered on user-specified gene sets.
-4. Pathway Enrichment Analysis: Performed network edge-based enrichment analysis (NEEA) to identify enriched biological pathways to these subnetworks.
-This approach reveals biological differences by analyzing gene expression and network structure.
+2. Subnetwork Extraction: Applied the random walk with restart (RWR) algorithm to extract subnetworks centered on user-specified gene sets.
+3. Pathway Enrichment Analysis: Performed network edge-based enrichment analysis (NEEA) to identify enriched biological pathways in subnetworks.
 
 ## Framework
 <img src="https://github.com/user-attachments/assets/f261edb8-91ce-48e3-b2e7-aed5dffc5172" width="400x900">
@@ -24,6 +23,7 @@ The framework package code is written in python 3.9.17. Users also need to insta
   - networkx
 
 ## Installation
+<p>To install the framework package, run:</p>
 <pre><code>pip install git+https://github.com/*HsinYu-Hsu*/Framework_package</code></pre>
 <p>If the error message "cannot find command git" was shown, please install "git".</p>
 <pre><code>conda install git</code></pre>
@@ -68,8 +68,8 @@ The framework package code is written in python 3.9.17. Users also need to insta
 
 ## Interest gene list
 [Back to variable table](#variable-table)
-  - Gene ID should be the same for gene expression data.
   - Each elements should be seperated with \n.
+  - Gene ID should be the same for gene expression data.
 
 | Gene |
 | ---- |
@@ -78,7 +78,7 @@ The framework package code is written in python 3.9.17. Users also need to insta
 | ENSG00000127314 |
 | ... |
 
-## Usage and output format
+## Usage and outputs
 ### Import and execute framework function with python
 
   - All example input file can be found in "example_input" folder.
@@ -98,6 +98,7 @@ framework('./example_input/gene_expression.txt',
 
 ### Sample weight file
 Sample weight result output (Example file: "gene_expression_weight.txt" in "example_output" folder)
+Provides weights for each sample based on the SWEET method.
 
 | sample | sample_weight |
 | ---- | ---- |
@@ -106,6 +107,8 @@ Sample weight result output (Example file: "gene_expression_weight.txt" in "exam
 | ... | ... |
 
 ### Sample subnetwork file
+Sample subnetwork result output (Example file: "{sample}_{pvalue}_rwr{rate}_subnetwork.txt" in "example_output" folder)
+Lists edges within extracted subnetworks and their z-scores.
 | gene1 | gene2 | z-score |
 | ---- | ---- | ---- |
 | ENSG00000070610 | ENSG00000166387 | -2.9484170173090085 |
@@ -116,7 +119,7 @@ Sample weight result output (Example file: "gene_expression_weight.txt" in "exam
 ### Pathway enrichment analysis result
 Pathway enrichment analysis result output (Example file: "{sample}_{pvalue}_rwr{rate}_edge_based_hyper.txt" in "example_output" folder)
 
-  - The result shows the significant associations between each subnetwork and KEGG pathway.
+The result shows the significant associations between each subnetwork and KEGG pathway.
 
 | Pathway name | P-value | FDR q-value | N | M | n | m |
 | ---- | ---- | ---- | --- | --- | --- | --- |

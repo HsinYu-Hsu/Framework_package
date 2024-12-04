@@ -25,9 +25,10 @@ The framework package code is written in python 3.9.17. Users also need to insta
 <pre><code>conda install git</code></pre>
 
 ## Variable
-<p>Framework function:</p>
+### Framework function
 <pre><code>def framework(GEM, 
               k=0.1, 
+              output_network='no',
               Samples=None, 
               Interest_genes=None,
               save_path=None, 
@@ -35,9 +36,22 @@ The framework package code is written in python 3.9.17. Users also need to insta
               rate=0.7)
 </code></pre>
 
+| Variable | Description | 
+| ---- | ----- |
+| GEM | A path to "gene expression matrix" file. |
+| k | Balance parameter. Default: 0.1. |
+| output_network | Decide whether to export the created network as a txt file ('no','yes'). Default: 'no'. |
+| Samples | A path to "sample list" file. |
+| Interest_genes | A path to "interest gene list" file. |
+| save_path | A path to the output files. |
+| pvalue | The cutoff for constructing networks. Default: 0.01. |
+| rate | The restart rate for calculating random walk with restart algorithm, which should be set between 0 and 1. Default: 0.7. |
+
 ## Gene expression data
 
    - Each elements should be delimited by tab (\t).
+     - Columns: Samples.
+     - Rows: Genes.
    - The gene ID should be entrez ID or ensembl ID.
 
 | Gene | 13-IT | 13-N |
@@ -48,16 +62,32 @@ The framework package code is written in python 3.9.17. Users also need to insta
 
 ## Interest gene list
 
+  - Gene ID should be the same for gene expression data.
+  - Each elements should be seperated with \n.
+
+|  |
+| ---- |
+| ENSG00000117152 |
+| ENSG00000179632 |
+| ENSG00000127314 |
 
 ## Usage and output format
-<p>Framework function:</p>
-<pre><code>from framework_package import framework
+### Import and execute framework function with python
+
+  - 
+
+
+<pre><code>from framework_package import framework  
     
-  framework('./example/gene_expression.txt',   
-              k=0.1, 
-              Samples=None, 
-              Interest_genes='./example/interest_genes.txt',
-              save_path='./example', 
-              pvalue=0.01,                
-              rate=0.7)
+framework('./example_input/gene_expression.txt',   
+            k=0.1, 
+            output_network='yes'
+            Samples='./example_test/samples.txt', 
+            Interest_genes='./example_test/interest_genes.txt',
+            save_path='./example_output', 
+            pvalue=0.01,                
+            rate=0.7)
 </code></pre>
+
+
+

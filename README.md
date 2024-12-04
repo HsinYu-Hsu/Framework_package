@@ -96,6 +96,7 @@ Sample weight result output (Example file: "gene_expression_weight.txt" in "exam
 | ---- | ---- |
 | 13-IT | 4.17586578629123 |
 | 13-N | 4.302891217808787 |
+|---- | ---- |
 
 ### Sample subnetwork file
 | gene1 | gene2 | z-score |
@@ -103,6 +104,7 @@ Sample weight result output (Example file: "gene_expression_weight.txt" in "exam
 | ENSG00000070610 | ENSG00000166387 | -2.9484170173090085 |
 | ENSG00000070610 | ENSG00000172236 | -2.873478066857216 |
 | ENSG00000117152 | ENSG00000166387 | -2.8527161492919006 |
+| ---- | ---- | ---- |
 
 ### Pathway enrichment analysis result
 Pathway enrichment analysis result output (Example file: "{sample}_{pvalue}_rwr{rate}_edge_based_hyper.txt" in "example_output" folder)
@@ -114,3 +116,4 @@ Pathway enrichment analysis result output (Example file: "{sample}_{pvalue}_rwr{
 | Glycolysis / Gluconeogenesis | ---- | ---- | --- | --- | --- | --- |
 | Citrate cycle (TCA cycle) | ---- | ---- | --- | --- | --- | --- |
 | Pentose phosphate pathway | ---- | ---- | --- | --- | --- | --- |
+| ---- | ---- | ---- | --- | --- | --- | --- |

@@ -32,8 +32,8 @@ The framework package code is written in python 3.9.17. Users also need to insta
               Samples=None, 
               Interest_genes=None,
               save_path=None, 
-              pvalue=0.01,                
-              rate=0.7)
+              pvalue=0.05,                
+              rate=0.3)
 </code></pre>
 
 | Variable | Description | 
@@ -41,11 +41,11 @@ The framework package code is written in python 3.9.17. Users also need to insta
 | GEM | A path to "gene expression data" file. |
 | k | Balance parameter. Default: 0.1. |
 | output_network | Decide whether to export the created network as a txt file ('no','yes'). Default: 'no'. |
-| Samples | A path to "sample list" file. |
+| Samples | A path to "sample list" file. If "None", calculate all samples. |
 | Interest_genes | A path to "interest gene list" file. |
 | save_path | A path to the output files. |
-| pvalue | The cutoff for constructing networks will set to different p-values. Default: 0.01. |
-| rate | The restart rate for calculating random walk with restart algorithm, which should be set between 0 and 1. Default: 0.7. |
+| pvalue | The cutoff for constructing networks will set to different p-values. Default: 0.05. |
+| rate | The restart rate for calculating random walk with restart algorithm, which should be set between 0 and 1. Default: 0.3. |
 
 ## Gene expression data
 
@@ -54,22 +54,24 @@ The framework package code is written in python 3.9.17. Users also need to insta
      - Rows: Genes.
    - The gene ID should be entrez ID or ensembl ID.
 
-| Gene | 13-IT | 13-N |
-| ---- | ----- | ---- |
-| ENSG00000117152 | 1.526069 | 1.321928 |
-| ENSG00000179632 | 3.986411 | 3.643856 |
-| ENSG00000127314 | 7.681309 | 7.565978 |
+| Gene | 13-IT | 13-N | ... |
+| ---- | ----- | ---- | ---- |
+| ENSG00000117152 | 1.526069 | 1.321928 | ... |
+| ENSG00000179632 | 3.986411 | 3.643856 | ... |
+| ENSG00000127314 | 7.681309 | 7.565978 | ... |
+| ... | ... | ... | ... |
 
 ## Interest gene list
 
   - Gene ID should be the same for gene expression data.
   - Each elements should be seperated with \n.
 
-|  |
+| Gene |
 | ---- |
 | ENSG00000117152 |
 | ENSG00000179632 |
 | ENSG00000127314 |
+| ... |
 
 ## Usage and output format
 ### Import and execute framework function with python
@@ -85,8 +87,8 @@ framework('./example_input/gene_expression.txt',
             Samples='./example_test/samples.txt', 
             Interest_genes='./example_test/interest_genes.txt',
             save_path='./example_output', 
-            pvalue=0.01,                
-            rate=0.7)
+            pvalue=0.05,                
+            rate=0.3)
 </code></pre>
 
 ### Sample weight file
@@ -96,7 +98,7 @@ Sample weight result output (Example file: "gene_expression_weight.txt" in "exam
 | ---- | ---- |
 | 13-IT | 4.17586578629123 |
 | 13-N | 4.302891217808787 |
-|---- | ---- |
+| ... | ... |
 
 ### Sample subnetwork file
 | gene1 | gene2 | z-score |
@@ -104,7 +106,7 @@ Sample weight result output (Example file: "gene_expression_weight.txt" in "exam
 | ENSG00000070610 | ENSG00000166387 | -2.9484170173090085 |
 | ENSG00000070610 | ENSG00000172236 | -2.873478066857216 |
 | ENSG00000117152 | ENSG00000166387 | -2.8527161492919006 |
-| ---- | ---- | ---- |
+| ... | ... | ... |
 
 ### Pathway enrichment analysis result
 Pathway enrichment analysis result output (Example file: "{sample}_{pvalue}_rwr{rate}_edge_based_hyper.txt" in "example_output" folder)
@@ -113,7 +115,8 @@ Pathway enrichment analysis result output (Example file: "{sample}_{pvalue}_rwr{
 
 | Pathway name | P-value | FDR q-value | N | M | n | m |
 | ---- | ---- | ---- | --- | --- | --- | --- |
-| Glycolysis / Gluconeogenesis | ---- | ---- | --- | --- | --- | --- |
-| Citrate cycle (TCA cycle) | ---- | ---- | --- | --- | --- | --- |
-| Pentose phosphate pathway | ---- | ---- | --- | --- | --- | --- |
-| ---- | ---- | ---- | --- | --- | --- | --- |
+| Glycolysis / Gluconeogenesis | 0.1625 | 1 | 12712 | 7 | 318 | 1 |
+| Citrate cycle (TCA cycle) | 0.9151 | 1 | 12712 | 97 | 318 | 1 |
+| Pentose phosphate pathway | 0.0121 | 1 | 12712 | 7 | 318 | 2 |
+| ... | ... | ... | ... | ... | ... | ... |
+

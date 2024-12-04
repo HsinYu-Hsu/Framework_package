@@ -1,9 +1,13 @@
 # Framework_package
-This framework package is a single-sample network-based framework to analyze RNA sequencing data from a cohort of HNSCC patients.
+This framework package is a single-sample network-based framework to analyze RNA sequencing data from a cohort of HNSCC patients. It is designed to uncover biological differences in different tumor samples by analyzing differential gene expression and network structure changes across samples. 
 
 1. Single-Sample Networks (SINs) Construction: Used the sample-specific weighted correlation network (SWEET) method to construct SINs.
-2. Subnetwork Extraction: Applied the random walk with restart (RWR) algorithm to extract subnetworks centered on user-specified gene sets.
-3. Pathway Enrichment Analysis: Performed network edge-based enrichment analysis (NEEA) to identify enriched biological pathways to these subnetworks.
+For more information, you can visit:
+[Paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC10025435/#ref41)
+[SWEET repository on GitHub](https://github.com/SysMednet/SWEET/tree/main).
+
+3. Subnetwork Extraction: Applied the random walk with restart (RWR) algorithm to extract subnetworks centered on user-specified gene sets.
+4. Pathway Enrichment Analysis: Performed network edge-based enrichment analysis (NEEA) to identify enriched biological pathways to these subnetworks.
 This approach reveals biological differences by analyzing gene expression and network structure.
 
 ## Framework

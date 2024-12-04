@@ -38,13 +38,13 @@ The framework package code is written in python 3.9.17. Users also need to insta
 
 | Variable | Description | 
 | ---- | ----- |
-| GEM | A path to "gene expression matrix" file. |
+| GEM | A path to "gene expression data" file. |
 | k | Balance parameter. Default: 0.1. |
 | output_network | Decide whether to export the created network as a txt file ('no','yes'). Default: 'no'. |
 | Samples | A path to "sample list" file. |
 | Interest_genes | A path to "interest gene list" file. |
 | save_path | A path to the output files. |
-| pvalue | The cutoff for constructing networks. Default: 0.01. |
+| pvalue | The cutoff for constructing networks will set to different p-values. Default: 0.01. |
 | rate | The restart rate for calculating random walk with restart algorithm, which should be set between 0 and 1. Default: 0.7. |
 
 ## Gene expression data
@@ -74,8 +74,8 @@ The framework package code is written in python 3.9.17. Users also need to insta
 ## Usage and output format
 ### Import and execute framework function with python
 
-  - 
-
+  - All example input file can be found in "example_input" folder.
+  - All example output file can be found in "example_output" folder.
 
 <pre><code>from framework_package import framework  
     
@@ -89,5 +89,28 @@ framework('./example_input/gene_expression.txt',
             rate=0.7)
 </code></pre>
 
+### Sample weight file
+Sample weight result output (Example file: "gene_expression_weight.txt" in "example_output" folder)
 
+| sample | sample_weight |
+| ---- | ---- |
+| 13-IT | 4.17586578629123 |
+| 13-N | 4.302891217808787 |
 
+### Sample subnetwork file
+| gene1 | gene2 | z-score |
+| ---- | ---- | ---- |
+| ENSG00000070610 | ENSG00000166387 | -2.9484170173090085 |
+| ENSG00000070610 | ENSG00000172236 | -2.873478066857216 |
+| ENSG00000117152 | ENSG00000166387 | -2.8527161492919006 |
+
+### Pathway enrichment analysis result
+Pathway enrichment analysis result output (Example file: "{sample}_{pvalue}_rwr{rate}_edge_based_hyper.txt" in "example_output" folder)
+
+  - The result shows the significant associations between each subnetwork and KEGG pathway.
+
+| Pathway name | P-value | FDR q-value | N | M | n | m |
+| ---- | ---- | ---- | --- | --- | --- | --- |
+| Glycolysis / Gluconeogenesis | ---- | ---- | --- | --- | --- | --- |
+| Citrate cycle (TCA cycle) | ---- | ---- | --- | --- | --- | --- |
+| Pentose phosphate pathway | ---- | ---- | --- | --- | --- | --- |

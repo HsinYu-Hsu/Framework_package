@@ -159,7 +159,8 @@ The result shows the significant associations between each subnetwork and KEGG p
 <pre><code>
 python3 network_graph.py -sample {sample} -c 0.05 -r 0.3 -cri 'pv' -s './example_output'
 </code></pre>
-  - **-sample**: Sample name.
+
+  - '-sample': Sample name.
   - **-c**: The cutoff for constructing networks.
   - **-r**: The restart rate for calculating random walk with restart algorithm.
   - **-cri**: The criterion for filtered pathways. Choose p-value or fdr q-value ('pv', 'fdrq').

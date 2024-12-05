@@ -110,10 +110,10 @@ framework('./example_input/gene_expression.txt',
             rate=0.3)
 </code></pre>
 
-### Sample weight file
-Sample weight result output (Example file: "gene_expression_weight.txt" in "example_output" folder)
+### Gene expression data file
+Gene expression data file (Example file: "gene_expression_1000genes.txt" in "example_input" folder)
 
-To reduce the consumption of computing time, the gene expression matrix file in the "example_output" folder contains only 1000 genes.
+To reduce the consumption of computing time, the gene expression matrix file in the "example_input" folder contains only 1000 genes.
 
 | Gene | 13-IC | 13-N | ... |
 | ---- | ----- | ---- | ---- |

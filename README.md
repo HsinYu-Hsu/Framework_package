@@ -59,12 +59,23 @@ The framework package code is written in python 3.9.17. Users also need to insta
      - Rows: Genes.
    - The gene ID should be entrez ID or ensembl ID.
 
-| Gene | 13-IT | 13-N | ... |
+| Gene | 13-IC | 13-N | ... |
 | ---- | ----- | ---- | ---- |
 | ENSG00000117152 | 1.526069 | 1.321928 | ... |
 | ENSG00000179632 | 3.986411 | 3.643856 | ... |
 | ENSG00000127314 | 7.681309 | 7.565978 | ... |
 | ... | ... | ... | ... |
+
+## Sample list format
+[Back to variable table](#variable-table)
+   - Each elements should be seperated with \n.
+   - The sample name should be include in gene expression data.
+
+| Sample |
+| ---- |
+| 13-IC |
+| 13-N |
+| ... |
 
 ## Interest gene list format
 [Back to variable table](#variable-table)
@@ -99,6 +110,7 @@ framework('./example_input/gene_expression.txt',
 
 ### Sample weight file
 Sample weight result output (Example file: "gene_expression_weight.txt" in "example_output" folder)
+
 Provides weights for each sample based on the SWEET method.
 
 | sample | sample_weight |
@@ -107,9 +119,19 @@ Provides weights for each sample based on the SWEET method.
 | 13-N | 4.302891217808787 |
 | ... | ... |
 
+### Mean and std file
+Mean and std result output (Example file: "mean_std.txt" in "example_output" folder)
+
+|  |  |
+| ---- | ---- |
+| mean | 0.08817455347984886 |
+| std | 0.25319309455468386 |
+
 ### Sample subnetwork file
 Sample subnetwork result output (Example file: "{sample}_{pvalue}_rwr{rate}_subnetwork.txt" in "example_output" folder)
+
 Lists edges within extracted subnetworks and their z-scores.
+
 | gene1 | gene2 | z-score |
 | ---- | ---- | ---- |
 | ENSG00000070610 | ENSG00000166387 | -2.9484170173090085 |
@@ -131,5 +153,10 @@ The result shows the significant associations between each subnetwork and KEGG p
 
 
 ### Network Graph
+
+<pre><code>
+%run python3 network_graph.py -sample {sample} -c 0.05 -a 0.3 -cri 'pv' -s './example_output'
+</code></pre>
+![image](https://github.com/user-attachments/assets/51d234e0-b25f-441e-b844-82c1ac63ecd7)
 
 To be continued ...

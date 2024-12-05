@@ -35,7 +35,7 @@ The framework package code is written in python 3.9.17. Users also need to insta
 ### Framework function
 <pre><code>def framework(GEM, 
               k=0.1, 
-              output_network='no',
+              output_edgescore_network='no',
               Samples=None, 
               Interest_genes=None,
               save_path=None, 
@@ -47,7 +47,7 @@ The framework package code is written in python 3.9.17. Users also need to insta
 | ---- | ----- |
 | GEM | A path to the "gene expression data" file. |
 | k | Balance parameter. Default: 0.1. |
-| output_network | Decide whether to export the created network as a txt file ('no', 'yes'). Default: 'no'. |
+| output_edgescore_network | Decide whether to export the created network as a txt file ('no', 'yes'). Default: 'no'. |
 | Samples | A path to the "sample list" file. If "None", calculate all samples. |
 | Interest_genes | A path to the "interest gene list" file. |
 | save_path | A path to the output files. |
@@ -102,7 +102,7 @@ Every output files from this function will be saved in the folder set by "save_p
     
 framework('./example_input/gene_expression.txt',   
             k=0.1, 
-            output_network='yes'
+            output_edgescore_network='yes'
             Samples='./example_input/samples.txt', 
             Interest_genes='./example_input/interest_genes.txt',
             save_path='./example_output', 
@@ -160,11 +160,13 @@ The result shows the significant associations between each subnetwork and KEGG p
 python3 network_graph.py -sample {sample} -c 0.05 -r 0.3 -cri 'pv' -s './example_output'
 </code></pre>
 
-  - '-sample': Sample name.
-  - **-c**: The cutoff for constructing networks.
-  - **-r**: The restart rate for calculating random walk with restart algorithm.
-  - **-cri**: The criterion for filtered pathways. Choose p-value or fdr q-value ('pv', 'fdrq').
-  - **-s**: A path to the output files.
+  - `-sample` : Sample name.
+  - `-c` : The cutoff for constructing networks.
+  - `-r` : The restart rate for calculating random walk with restart algorithm.
+  - `-cri` : The criterion for filtered pathways. Choose p-value or fdr q-value ('pv', 'fdrq').
+  - `-s` : A path to the output files.
+The offline webpage shows the enriched pathway genes on subnetwork by network graph with cytoscape.js.
+Network graph output (Example file: "{sample}_{pvalue}_rwr{rate}_subnetwork_pathway_graph.html" in "for_graphs" folder)
 
 ![image](https://github.com/user-attachments/assets/a3a8f2bf-44c5-4ec8-a7d4-de6c527ce4cf)
 

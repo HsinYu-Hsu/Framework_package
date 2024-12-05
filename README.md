@@ -43,13 +43,13 @@ The framework package code is written in python 3.9.17. Users also need to insta
 
 | Variable | Description | 
 | ---- | ----- |
-| GEM | A path to "gene expression data" file. |
+| GEM | A path to the "gene expression data" file. |
 | k | Balance parameter. Default: 0.1. |
-| output_network | Decide whether to export the created network as a txt file ('no','yes'). Default: 'no'. |
-| Samples | A path to "sample list" file. If "None", calculate all samples. |
-| Interest_genes | A path to "interest gene list" file. |
+| output_network | Decide whether to export the created network as a txt file ('no', 'yes'). Default: 'no'. |
+| Samples | A path to the "sample list" file. If "None", calculate all samples. |
+| Interest_genes | A path to the "interest gene list" file. |
 | save_path | A path to the output files. |
-| pvalue | The cutoff for constructing networks will set to different p-values. Default: 0.05. |
+| pvalue | The cutoff for constructing networks will be set to different p-values. Default: 0.05. |
 | rate | The restart rate for calculating random walk with restart algorithm, which should be set between 0 and 1. Default: 0.3. |
 
 ## Gene expression data format

@@ -94,8 +94,8 @@ The framework package code is written in python 3.9.17. Users also need to insta
 ## Usage and outputs
 ### Import and execute framework function with python
 
-  - All example input file can be found in "example_input" folder.
-  - All example output file can be found in "example_output" folder.
+  - All example input files can be found in "example_input" folder.
+  - All example output files can be found in "example_output" folder.
 
 Every output files from this function will be saved in the folder set by "save_path" variable.
 <pre><code>from framework_package import framework  
@@ -157,8 +157,14 @@ The result shows the significant associations between each subnetwork and KEGG p
 ### Network Graph
 
 <pre><code>
-%run python3 network_graph.py -sample {sample} -c 0.05 -a 0.3 -cri 'pv' -s './example_output'
+python3 network_graph.py -sample {sample} -c 0.05 -r 0.3 -cri 'pv' -s './example_output'
 </code></pre>
+  - **-sample**: Sample name.
+  - **-c**: The cutoff for constructing networks.
+  - **-r**: The restart rate for calculating random walk with restart algorithm.
+  - **-cri**: The criterion for filtered pathways. Choose p-value or fdr q-value ('pv', 'fdrq').
+  - **-s**: A path to the output files.
+
 ![image](https://github.com/user-attachments/assets/a3a8f2bf-44c5-4ec8-a7d4-de6c527ce4cf)
 
 To be continued ...

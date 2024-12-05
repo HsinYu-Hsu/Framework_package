@@ -16,9 +16,11 @@ For more information, you can visit:
 The framework package code is written in python 3.9.17. Users also need to install following python package listed below:
   - numpy
   - pandas
+  - shutil
   - scipy
   - statsmodels
   - matplotlib
+  - argparse
   - json
   - networkx
 

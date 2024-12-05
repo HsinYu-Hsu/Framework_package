@@ -47,7 +47,7 @@ The framework package code is written in python 3.9.17. Users also need to insta
 | ---- | ----- |
 | GEM | A path to the "gene expression data" file. |
 | k | Balance parameter. Default: 0.1. |
-| output_edgescore_network | Decide whether to export the created network as a txt file ('no', 'yes'). Default: 'no'. |
+| output_edgescore_network | Decide whether to export the created network as a .txt file ('no', 'yes'). Default: 'no'. If 'no', only output the .npz file. |
 | Samples | A path to the "sample list" file. If "None", calculate all samples. |
 | Interest_genes | A path to the "interest gene list" file. |
 | save_path | A path to the output files. |
@@ -176,7 +176,7 @@ python3 network_graph.py -sample {sample} -c 0.05 -r 0.3 -cri 'pv' -s './example
   - `-c` : The cutoff for constructing networks.
   - `-r` : The restart rate for calculating random walk with restart algorithm.
   - `-cri` : The criterion for filtered pathways. Choose p-value or fdr q-value ('pv', 'fdrq').
-  - `-s` : A path to the output files.
+  - `-s` : A path to the output files of the previous subnetwork and pathway enrichment results.
 
 Network graph output (Example file: "{sample}_{pvalue}_rwr{rate}_subnetwork_pathway_graph.html" in "for_graphs" folder)
 

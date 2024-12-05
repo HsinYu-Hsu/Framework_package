@@ -157,6 +157,6 @@ The result shows the significant associations between each subnetwork and KEGG p
 <pre><code>
 %run python3 network_graph.py -sample {sample} -c 0.05 -a 0.3 -cri 'pv' -s './example_output'
 </code></pre>
-![image](https://github.com/user-attachments/assets/51d234e0-b25f-441e-b844-82c1ac63ecd7)
+![image](https://github.com/user-attachments/assets/a3a8f2bf-44c5-4ec8-a7d4-de6c527ce4cf)
 
 To be continued ...

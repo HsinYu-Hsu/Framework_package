@@ -182,5 +182,4 @@ Network graph output (Example file: "{sample}_{pvalue}_rwr{rate}_subnetwork_path
 
 The offline webpage shows the enriched pathway genes on subnetwork by network graph with cytoscape.js.
 
-![image](https://github.com/user-attachments/assets/a3a8f2bf-44c5-4ec8-a7d4-de6c527ce4cf)
-
+![image](https://github.com/user-attachments/assets/fb1a6694-0ce5-42ee-8a6a-e62f4db468fc)

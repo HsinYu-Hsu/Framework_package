@@ -113,6 +113,18 @@ framework('./example_input/gene_expression.txt',
 ### Sample weight file
 Sample weight result output (Example file: "gene_expression_weight.txt" in "example_output" folder)
 
+To reduce the consumption of computing time, the gene expression matrix file in the "example_output" folder contains only 1000 genes.
+
+| Gene | 13-IC | 13-N | ... |
+| ---- | ----- | ---- | ---- |
+| ENSG00000117152 | 1.526069 | 1.321928 | ... |
+| ENSG00000179632 | 3.986411 | 3.643856 | ... |
+| ENSG00000127314 | 7.681309 | 7.565978 | ... |
+| ... | ... | ... | ... |
+
+### Sample weight file
+Sample weight result output (Example file: "gene_expression_weight.txt" in "example_output" folder)
+
 Provides weights for each sample based on the SWEET method.
 
 | sample | sample_weight |
@@ -165,9 +177,10 @@ python3 network_graph.py -sample {sample} -c 0.05 -r 0.3 -cri 'pv' -s './example
   - `-r` : The restart rate for calculating random walk with restart algorithm.
   - `-cri` : The criterion for filtered pathways. Choose p-value or fdr q-value ('pv', 'fdrq').
   - `-s` : A path to the output files.
-The offline webpage shows the enriched pathway genes on subnetwork by network graph with cytoscape.js.
+
 Network graph output (Example file: "{sample}_{pvalue}_rwr{rate}_subnetwork_pathway_graph.html" in "for_graphs" folder)
+
+The offline webpage shows the enriched pathway genes on subnetwork by network graph with cytoscape.js.
 
 ![image](https://github.com/user-attachments/assets/a3a8f2bf-44c5-4ec8-a7d4-de6c527ce4cf)
 
-To be continued ...

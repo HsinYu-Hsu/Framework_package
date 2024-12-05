@@ -52,7 +52,7 @@ The framework package code is written in python 3.9.17. Users also need to insta
 | pvalue | The cutoff for constructing networks will set to different p-values. Default: 0.05. |
 | rate | The restart rate for calculating random walk with restart algorithm, which should be set between 0 and 1. Default: 0.3. |
 
-## Gene expression data
+## Gene expression data format
 [Back to variable table](#variable-table)
    - Each elements should be delimited by tab (\t).
      - Columns: Samples.
@@ -66,7 +66,7 @@ The framework package code is written in python 3.9.17. Users also need to insta
 | ENSG00000127314 | 7.681309 | 7.565978 | ... |
 | ... | ... | ... | ... |
 
-## Interest gene list
+## Interest gene list format
 [Back to variable table](#variable-table)
   - Each elements should be seperated with \n.
   - Gene ID should be the same for gene expression data.
@@ -84,13 +84,14 @@ The framework package code is written in python 3.9.17. Users also need to insta
   - All example input file can be found in "example_input" folder.
   - All example output file can be found in "example_output" folder.
 
+Every output files from this function will be saved in the folder set by "save_path" variable.
 <pre><code>from framework_package import framework  
     
 framework('./example_input/gene_expression.txt',   
             k=0.1, 
             output_network='yes'
-            Samples='./example_test/samples.txt', 
-            Interest_genes='./example_test/interest_genes.txt',
+            Samples='./example_input/samples.txt', 
+            Interest_genes='./example_input/interest_genes.txt',
             save_path='./example_output', 
             pvalue=0.05,                
             rate=0.3)
@@ -117,7 +118,7 @@ Lists edges within extracted subnetworks and their z-scores.
 | ... | ... | ... |
 
 ### Pathway enrichment analysis result
-Pathway enrichment analysis result output (Example file: "{sample}_{pvalue}_rwr{rate}_edge_based_hyper.txt" in "example_output" folder)
+Pathway enrichment analysis result output (Example file: "{sample}_{pvalue}_rwr{rate}_edge_based_hyper.txt" in "example_output/neea_results" folder)
 
 The result shows the significant associations between each subnetwork and KEGG pathway.
 

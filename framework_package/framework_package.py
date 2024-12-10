@@ -1,4 +1,5 @@
 import os 
+from . import Step1_SWEET_sample_weight_calculating_HNSCC as SWEET1
 import Step1_SWEET_sample_weight_calculating_HNSCC as SWEET1
 import Step2_SWEET_edge_weight_calculating_HNSCC as SWEET2
 import Step3_SWEET_calculating_mean_std_zscore_HNSCC as SWEET3

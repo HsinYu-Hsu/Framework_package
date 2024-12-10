@@ -18,7 +18,6 @@ setup(
         "statsmodels",
         "matplotlib",
         "argparse",
-        "json",
         "networkx"
     ],
     classifiers=[  

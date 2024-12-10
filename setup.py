@@ -14,7 +14,6 @@ setup(
     install_requires=[ 
         "numpy",
         "pandas",
-        "shutil",
         "scipy",
         "statsmodels",
         "matplotlib",

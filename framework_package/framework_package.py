@@ -1,12 +1,12 @@
 import os 
 from . import Step1_SWEET_sample_weight_calculating_HNSCC as SWEET1
-import Step1_SWEET_sample_weight_calculating_HNSCC as SWEET1
-import Step2_SWEET_edge_weight_calculating_HNSCC as SWEET2
-import Step3_SWEET_calculating_mean_std_zscore_HNSCC as SWEET3
-import Step4_RWR_algorithm as RWR
-import Step5_knee_point as KNEE
-import Step6_create_subnetwork as SUBNETWORK
-import Step7_NEEA_hyper as NEEA
+from . import Step1_SWEET_sample_weight_calculating_HNSCC as SWEET1
+from . import Step2_SWEET_edge_weight_calculating_HNSCC as SWEET2
+from . import Step3_SWEET_calculating_mean_std_zscore_HNSCC as SWEET3
+from . import Step4_RWR_algorithm as RWR
+from . import Step5_knee_point as KNEE
+from . import Step6_create_subnetwork as SUBNETWORK
+from . import Step7_NEEA_hyper as NEEA
 
 def framework(GEM, 
               k=0.1, 

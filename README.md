@@ -102,7 +102,7 @@ Every output files from this function will be saved in the folder set by "save_p
     
 framework('./example_input/gene_expression.txt',   
             k=0.1, 
-            output_edgescore_network='yes'
+            output_edgescore_network='yes',
             Samples='./example_input/samples.txt', 
             Interest_genes='./example_input/interest_genes.txt',
             save_path='./example_output', 

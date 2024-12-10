@@ -1,5 +1,5 @@
 
-from framework_package import framework
+from .framework import framework
 
 __all__ = ['framework']
 

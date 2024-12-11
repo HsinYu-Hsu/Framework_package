@@ -167,7 +167,7 @@ def sweet3(file_e, file_p, save, output_network) :
             json.dump(gene_map, f)
         
         # Output network txt file
-        if output_network == 'yes' :
+        if output_edgescore_network == 'yes' :
             # write txt file
             edge_pairs = []
             with open(f"{save}/{p}_zscore.txt", mode='w') as wline:

@@ -17,23 +17,26 @@ def check_file(expres):
             print(f"There is {c} in the 'gene expression matrix' file and it will be assigned to 0.")
     return expres
 
-### ez -> ens
-data_e = {}
-with open("./example_input/geneid_ens2ez.txt",'r')as f:
-    _g = f.readline()
-    for line in f:
-        g_e, ent = line.strip('\n').split(',')     
-        g_e = [(g_e)]
-        if ent == '':
-            continue
-        else:   
-            if ent in data_e.keys() :
-                # ent = ent.split()    
-                data_e[ent].extend(g_e)
-            else :
-                data_e[ent] = g_e
+
 # Pathway edges (ens)
 def calculate_pathway_edges_ens(pathway_file):
+
+    ### ez -> ens
+    data_e = {}
+    with open("./example_input/geneid_ens2ez.txt",'r')as f:
+        _g = f.readline()
+        for line in f:
+            g_e, ent = line.strip('\n').split(',')     
+            g_e = [(g_e)]
+            if ent == '':
+                continue
+            else:   
+                if ent in data_e.keys() :
+                    # ent = ent.split()    
+                    data_e[ent].extend(g_e)
+                else :
+                    data_e[ent] = g_e
+    
     # Record genes
     pathway_gene = defaultdict(list)
     with open(pathway_file, 'r') as input_term:

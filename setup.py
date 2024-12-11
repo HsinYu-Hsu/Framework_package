@@ -15,6 +15,7 @@ setup(
         "numpy",
         "pandas",
         "scipy",
+        "kneed",
         "statsmodels",
         "matplotlib",
         "argparse",

@@ -40,7 +40,7 @@ def framework(GEM,
     print('Constructing SWEET networks....')
     SWEET1.sweet1(GEM, k, save_path)
     SWEET2.sweet2(GEM, Samples, save_path)
-    SWEET3.sweet3(GEM, Samples, save_path, output_network)
+    SWEET3.sweet3(GEM, Samples, save_path, output_edgescore_network)
     print('Complete\n')
     
     

@@ -17,7 +17,7 @@ def check_file(expres):
             print(f"There is {c} in the 'gene expression matrix' file and it will be assigned to 0.")
     return expres
 
-def sweet3(file_e, file_p, save, output_network) :
+def sweet3(file_e, file_p, save, output_edgescore_network) :
 
     #open patient file
     patlist = []

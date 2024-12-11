@@ -10,7 +10,7 @@ from . import Step7_NEEA_hyper as NEEA
 
 def framework(GEM, 
               k=0.1, 
-              output_network='no',
+              output_edgescore_network='no',
               Samples=None, 
               Interest_genes=None,
               save_path=None, 

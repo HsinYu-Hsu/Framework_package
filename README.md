@@ -100,7 +100,7 @@ The framework package code is written in python 3.9.17. Users also need to insta
 Every output files from this function will be saved in the folder set by "save_path" variable.
 <pre><code>from framework_package import framework  
     
-framework('./example_input/gene_expression.txt',   
+framework('./example_input/gene_expression_1000genes.txt',   
             k=0.1, 
             output_edgescore_network='yes',
             Samples='./example_input/samples.txt', 

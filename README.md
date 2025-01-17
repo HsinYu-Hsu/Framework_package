@@ -60,6 +60,7 @@ The framework package code is written in python 3.9.17. Users also need to insta
      - Columns: Samples.
      - Rows: Genes.
    - The gene ID should be entrez ID or ensembl ID.
+   - As building a network demands substantial computational resources, it is recommended to avoid including too many genes.
 
 | Gene | 13-IC | 13-N | ... |
 | ---- | ----- | ---- | ---- |
